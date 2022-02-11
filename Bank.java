@@ -1,69 +1,47 @@
-package Inheritance;
+package OopsExamples;
 
- class Bank 
+class Bank
 {
 
-	String Bank_name;
 	
-	public Bank(String Bank_name)
-	{
-		this.Bank_name=Bank_name;
-	}//Bank Constructor
+	int accno;
+	String accholderName;
+	long accbalance;
 	
-	public int interest()
+	
+	public Bank(int accno,String holdername,long accbalance)
+	
+	{this.accno=accno;
+	
+	
+	this.accholderName=holdername;
+	this.accbalance=accbalance;
+	}
+	public void withdraw(long amount)
+	
+	{if((amount<accbalance)&&(amount>=500))
 	{
-		return 8;
+		accbalance=accbalance-amount;
+	System.out.println(amount+"withdraw has done successfully");
 	}
 	
-}//bank
-
-class sbi extends Bank
-{
-	public sbi(String Bank_name)
+	else
 	{
+		System.out.println("Insufficient balance!deposite first");
 		
-		super(Bank_name);//call parent class constructor 
-		
-	}//sbi Constructor
-
-	void display()
-	{
-		int x=200;
-		
-		System.out.println("Bank Name :"+Bank_name);
-		
-	}//display
-}//child class
-
-class employee extends sbi
-{
-	int bonus;
-	
-	public employee(String Bank_name, int bonus)
-	{
-		super(Bank_name);
-		this.bonus=bonus;
-	}
-	
-	void display()
-	{
-		System.out.println("Bank Name: "+Bank_name+"\nBonus :"+bonus);
-	}
-}
-
-public class multiple {
-
-	public static void main(String[] args) {
-		
-				
-		employee emp = new employee("State bank of india",30000);
-		emp.display();
-	
 	
 	}
-}
-	
-	
-	
+	}
+	public void checkbalance()
+	{
+	System.out.println("accont no:"+this.accno);
+	System.out.println("accountholder"+this.accholderName);
+	System.out.println("accountbalance"+this.accbalance);
+	}
+	}
 
+	
+	
+	
+	
 
