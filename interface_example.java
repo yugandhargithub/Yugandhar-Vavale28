@@ -1,0 +1,45 @@
+package Inheritance;
+
+interface demo
+{
+	void method1(); 
+	void method2();
+}
+
+interface demo1
+{
+	void method3();
+
+}
+
+class XYZ implements demo,demo1
+{
+	public void method1()
+	{
+		System.out.println("In method1");
+	}
+	
+	public void method2()
+	{
+		System.out.println("In method2");
+	}
+
+	public void method3()
+	{
+		System.out.println("In method3");
+	}
+
+}
+
+
+public class interface_example {
+
+	public static void main(String[] args) {
+
+		XYZ obj = new XYZ();
+		
+		obj.method1();
+		obj.method2();
+		obj.method3();	}
+
+}
